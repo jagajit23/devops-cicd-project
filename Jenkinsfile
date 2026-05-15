@@ -20,7 +20,7 @@ pipeline {
                 sh 'docker stop devops-container || true'
                 sh 'docker rm devops-container || true'
 
-                sh 'docker run -dit --name devops-container devops-app'
+                sh 'docker run -dit -p 5000:5000 --name devops-container devops-app'
             }
         }
     }
